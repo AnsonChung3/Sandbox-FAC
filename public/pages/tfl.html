@@ -11,6 +11,7 @@
         <div style="min-height: 20vh; min-width: 40vw; max-height: 60vh; max-width: 80vw; border: 2px solid black;">
             <ul id="display-area"></ul>
         </div>
+        <button id="btn-2">Meta mode</button>
         <button id="btn-1">Meta</button>
     </div>
     <script>
@@ -22,6 +23,16 @@
                 displayArea.appendChild(listItem);
             });
         }
+        document.getElementById('btn-2').addEventListener('click', () => {
+            fetch('/tfl/meta-lines')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    localStorage.setItem('tfl_meta_tube_line_id', JSON.stringify(data));
+                    addContentToDisplayArea(data);
+                })
+                .catch(err => console.log(err));
+        });
         document.getElementById('btn-1').addEventListener('click', () => {
             fetch('/tfl/meta')
                 .then(res => res.json())
