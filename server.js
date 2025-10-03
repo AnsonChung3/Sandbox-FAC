@@ -14,6 +14,16 @@ app.use(express.static(path.join(__dirname)));
 
 app.use('/tfl', TFL_ROUTES);
 
+const logOne = function (req, res, next) {
+    console.log('one');
+    next();
+};
+
+app.get('/router-test', [logOne], (req, res, next) => {
+    next();
+}, (req, res) => {
+    console.log('before cycle end');
+    res.send('Tada');
 })
 
 // this is the default fall back. Keep this at the end of this file
