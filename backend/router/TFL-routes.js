@@ -1,8 +1,12 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import { TFL_KEY } from '../../public/api_keys/TFL_KEY.js';
 
 const TFL_ROUTES = express.Router();
 const url = 'https://api.tfl.gov.uk';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const enterLog = function (req, res, next) {
     console.log('enter TFL route');
@@ -22,5 +26,9 @@ TFL_ROUTES.get('/tfl-test', async (req, res) => {
     }
 
 })
+
+TFL_ROUTES.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/tfl.html'));
+});
 
 export default TFL_ROUTES;
