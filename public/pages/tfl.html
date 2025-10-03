@@ -14,19 +14,21 @@
         <button id="btn-1">Meta</button>
     </div>
     <script>
+        function addContentToDisplayArea(content) {
+            const displayArea = document.getElementById('display-area');
+            content.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                displayArea.appendChild(listItem);
+            });
+        }
         document.getElementById('btn-1').addEventListener('click', () => {
             fetch('/tfl/meta')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
                     localStorage.setItem('tfl_meta_nodeName', JSON.stringify(data));
-                    const displayArea = document.getElementById('display-area');
-                    data.forEach(item => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = item;
-                        displayArea.appendChild(listItem);
-                    });
-                    
+                    addContentToDisplayArea(data);                    
                 })
                 .catch(err => console.log(err));
         });
