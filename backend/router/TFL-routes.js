@@ -14,6 +14,20 @@ const enterLog = function (req, res, next) {
 };
 TFL_ROUTES.use(enterLog);
 
+TFL_ROUTES.get('/meta', async (req, res) => {
+    try {
+        const response = await fetch (`${url}/Line/Meta/Modes?api_key=${TFL_KEY}`);
+        console.log(response.status);
+        const body = await response.text();
+        const parsedBody = JSON.parse(body);
+        const arrayExtract = parsedBody.map((item) => item.modeName);
+        console.log(arrayExtract);
+        res.send(arrayExtract);
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 TFL_ROUTES.get('/tfl-test', async (req, res) => {
     try {
         const response = await fetch(`${url}/Place/Meta/PlaceTypes?api_key=${TFL_KEY}`);

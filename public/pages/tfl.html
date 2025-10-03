@@ -8,11 +8,28 @@
     <h1>Welcome to TFL Page</h1>
     <div>
         <h2>display area</h2>
-        <div id="display-area" style="min-height: 20vh; min-width: 40vw; max-height: 60vh; max-width: 80vw; border: 2px solid black;"></div>
-        <!-- <button></button> -->
+        <div style="min-height: 20vh; min-width: 40vw; max-height: 60vh; max-width: 80vw; border: 2px solid black;">
+            <ul id="display-area"></ul>
+        </div>
+        <button id="btn-1">Meta</button>
     </div>
     <script>
-        
+        document.getElementById('btn-1').addEventListener('click', () => {
+            fetch('/tfl/meta')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    localStorage.setItem('tfl_meta_nodeName', JSON.stringify(data));
+                    const displayArea = document.getElementById('display-area');
+                    data.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = item;
+                        displayArea.appendChild(listItem);
+                    });
+                    
+                })
+                .catch(err => console.log(err));
+        });
     </script>
 </body>
 </html>
