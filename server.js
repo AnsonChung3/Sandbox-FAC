@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { TFL_KEY } from './public/api_keys/TFL_KEY.js'
+import TFL_ROUTES from './backend/router/TFL-routes.js'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,16 +12,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname)));
 
-app.get('/tfl-test', async (req, res) => {
-    try {
-        const response = await fetch(`https://api.tfl.gov.uk/Place/Meta/PlaceTypes?api_key=${TFL_KEY}`);
-        console.log(response.status);
-        const body = await response.text();
-        console.log(body);
-        res.send(body); // send something back to client
-    } catch (error) {
-        console.log(error)
-    }
+app.use('/tfl', TFL_ROUTES);
 
 })
 
