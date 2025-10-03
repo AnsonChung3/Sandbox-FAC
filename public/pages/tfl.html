@@ -8,7 +8,7 @@
     <h1>Welcome to TFL Page</h1>
     <div>
         <h2>display area</h2>
-        <div style="min-height: 20vh; min-width: 40vw; max-height: 60vh; max-width: 80vw; border: 2px solid black;">
+        <div style="min-height: 20vh; min-width: 40vw; max-height: 60vh; max-width: 80vw; border: 2px solid black; overflow: auto;">
             <ul id="display-area"></ul>
         </div>
         <button id="btn-3">Stop Points</button>
@@ -24,6 +24,16 @@
                 displayArea.appendChild(listItem);
             });
         }
+        document.getElementById('btn-3').addEventListener('click', () => {
+            fetch('/tfl/meta-line-stop-points')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    // localStorage.setItem('tfl_lines', JSON.stringify(data));
+                    addContentToDisplayArea(data);
+                })
+                .catch(err => console.log(err));
+        });    
         document.getElementById('btn-2').addEventListener('click', () => {
             fetch('/tfl/meta-lines')
                 .then(res => res.json())
