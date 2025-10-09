@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import TFL_ROUTES from './backend/router/TFL-routes.js'
+import DEFAULT_ROUTES from './backend/router/default-routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname)));
 
 app.use('/tfl', TFL_ROUTES);
+app.use('/default', DEFAULT_ROUTES);
 
 const logOne = function (req, res, next) {
     console.log('one');
