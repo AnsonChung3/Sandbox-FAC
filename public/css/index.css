@@ -1,0 +1,17 @@
+#train-loader {
+    width: 60vw;
+    /* height: 10vh; */
+    min-height: 3em;
+    border: 2px solid var(--accent);
+    margin-top: 1%;
+}
+
+#spin-loader {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
