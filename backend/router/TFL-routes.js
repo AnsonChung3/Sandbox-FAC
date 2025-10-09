@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { TFL_KEY } from '../../public/api_keys/TFL_KEY.js';
+import { TFL_KEY } from '../../backend/api_keys/TFL_KEY.js';
 
 const TFL_ROUTES = express.Router();
 const url = 'https://api.tfl.gov.uk';
