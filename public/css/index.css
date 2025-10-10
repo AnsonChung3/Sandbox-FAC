@@ -6,6 +6,16 @@
     margin-top: 1%;
 }
 
+#slide-loader {
+    display: inline-block;
+    animation: slide-between 1s linear infinite alternate;
+}
+
+@keyframes slide-between {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(300%); }
+}
+
 #spin-loader {
     display: inline-block;
     animation: spin 1s linear infinite;
