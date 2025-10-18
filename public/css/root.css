@@ -1,0 +1,26 @@
+:root{
+    --background: #6A6E7D;
+    --primary: #202126;
+    --secondary: #494B57;
+    --tertiary: #B8BDDB;
+    --accent: #1D317A;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: Arial, sans-serif;
+    width: 80vw;
+    margin: auto;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--tertiary);
+}
+
+input {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: 2px solid var(--tertiary);
+}
