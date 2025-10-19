@@ -1,0 +1,15 @@
+@import url('./colours.css');
+
+.wrapper {
+    border: 5px solid var(--yellow);
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#left {
+    border: 5px solid var(--green);
+}
+
+#right {
+    border: 5px solid var(--blue);
+}
