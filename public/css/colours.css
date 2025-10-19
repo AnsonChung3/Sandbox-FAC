@@ -4,4 +4,10 @@
     --secondary: #494B57;
     --tertiary: #B8BDDB;
     --accent: #1D317A;
+
+    --red: rgb(220, 36, 31);
+    --yellow: rgb(255, 200, 10);
+    --green: rgb(0, 125, 50);
+    --pink: rgb(245, 137, 166);
+    --blue: rgb(0, 25, 168);
 }
