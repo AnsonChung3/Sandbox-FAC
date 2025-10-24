@@ -1,6 +1,6 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import INDEX_ROUTER from './backend/routes/index.js';
 
 const app = express();
@@ -19,18 +19,23 @@ const logOne = function (req, res, next) {
     next();
 };
 
-app.get('/router-test', [logOne], (req, res, next) => {
-    next();
-}, (req, res) => {
-    console.log('before cycle end');
-    res.send('Tada');
-})
+app.get(
+    '/router-test',
+    [logOne],
+    (req, res, next) => {
+        next();
+    },
+    (req, res) => {
+        console.log('before cycle end');
+        res.send('Tada');
+    },
+);
 
 // this is the default fall back. Keep this at the end of this file
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'public/pages/index.html'));
+    res.sendFile(path.join(__dirname, 'public/pages/index.html'));
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });

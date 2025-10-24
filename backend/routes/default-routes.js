@@ -1,6 +1,6 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const DEFAULT_ROUTES = express.Router();
 const __filename = fileURLToPath(import.meta.url);

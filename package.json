@@ -1,24 +1,24 @@
 {
-  "name": "anson-playground",
-  "version": "1.0.0",
-  "description": "Playground project with Express js and mostly vanilla js",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "author": "Anson Chung",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10",
-    "prettier": "3.6.2"
-  },
-  "type": "module",
-  "nodemonConfig": {
-    "ext": "js,mjs,cjs,json,html"
-  }
+    "name": "anson-playground",
+    "version": "1.0.0",
+    "description": "Playground project with Express js and mostly vanilla js",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js",
+        "start": "node server.js"
+    },
+    "author": "Anson Chung",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^5.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.10",
+        "prettier": "3.6.2"
+    },
+    "type": "module",
+    "nodemonConfig": {
+        "ext": "js,mjs,cjs,json,html"
+    }
 }

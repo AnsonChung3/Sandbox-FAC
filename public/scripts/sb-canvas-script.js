@@ -5,34 +5,33 @@ function draw(parentEl) {
     // so the default setting of this should take responsive sizes of canvas
     const { width, height } = resizeCanvas(parentEl);
 
-    const canvas = document.getElementById("draw-line-n-dot");
+    const canvas = document.getElementById('draw-line-n-dot');
     canvas.width = width;
     canvas.height = height;
     canvas.style.background = 'var(--pink)';
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, width, height)
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, width, height);
     ctx.strokeStyle = 'var(--red)';
     ctx.lineWidth = 2;
 
-    const midWid = width*.5;
-    const leadTop = height*.25;
-    const r = width*.2;
+    const midWid = width * 0.5;
+    const leadTop = height * 0.25;
+    const r = width * 0.2;
 
     ctx.beginPath();
     ctx.moveTo(midWid, 0);
     ctx.lineTo(midWid, leadTop);
-    ctx.arc(midWid, leadTop+r, r, -(Math.PI/2), Math.PI * 2, false)
-    ctx.moveTo(midWid, leadTop+(r*2));
+    ctx.arc(midWid, leadTop + r, r, -(Math.PI / 2), Math.PI * 2, false);
+    ctx.moveTo(midWid, leadTop + r * 2);
     ctx.lineTo(midWid, height);
     ctx.stroke();
-    
 }
 
 function resizeCanvas(parentEl) {
     return {
         width: document.getElementById(parentEl).clientWidth,
-        height: document.getElementById(parentEl).clientHeight
-    }
+        height: document.getElementById(parentEl).clientHeight,
+    };
 }
 
 function debounce(func, delay) {
