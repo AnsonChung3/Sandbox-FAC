@@ -3,11 +3,12 @@
 .wrapper {
     border: 5px solid var(--yellow);
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 10% 90%;
 }
 
 #left {
     border: 5px solid var(--green);
+    height: 20vh;
 }
 
 #right {
