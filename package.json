@@ -16,5 +16,8 @@
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
-  "type": "module"
+  "type": "module",
+  "nodemonConfig": {
+    "ext": "js,mjs,cjs,json,html"
+  }
 }
