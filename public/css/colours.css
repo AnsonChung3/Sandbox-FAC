@@ -1,9 +1,9 @@
-:root{
-    --background: #6A6E7D;
+:root {
+    --background: #6a6e7d;
     --primary: #202126;
-    --secondary: #494B57;
-    --tertiary: #B8BDDB;
-    --accent: #1D317A;
+    --secondary: #494b57;
+    --tertiary: #b8bddb;
+    --accent: #1d317a;
 
     --red: rgb(220, 36, 31);
     --yellow: rgb(255, 200, 10);

@@ -1,18 +1,18 @@
 #suggestions {
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: auto;
-  display: none; /* hidden by default */
-  position: absolute;
-  background: white;
-  width: 200px;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none; /* hidden by default */
+    position: absolute;
+    background: white;
+    width: 200px;
 }
 
 .suggestion {
-  padding: 8px;
-  cursor: pointer;
+    padding: 8px;
+    cursor: pointer;
 }
 
 .suggestion:hover {
-  background: #f0f0f0;
+    background: #f0f0f0;
 }

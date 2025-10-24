@@ -12,8 +12,12 @@
 }
 
 @keyframes slide-between {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(300%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(300%);
+    }
 }
 
 #spin-loader {
@@ -22,6 +26,10 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

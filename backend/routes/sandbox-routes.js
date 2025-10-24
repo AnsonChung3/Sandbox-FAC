@@ -1,6 +1,6 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const SANDBOX_ROUTES = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -13,7 +13,9 @@ const enterLog = function (req, res, next) {
 SANDBOX_ROUTES.use(enterLog);
 
 SANDBOX_ROUTES.get('/canvas', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/pages/sandbox-canvas.html'));
+    res.sendFile(
+        path.join(__dirname, '../../public/pages/sandbox-canvas.html'),
+    );
 });
 
 SANDBOX_ROUTES.get('/', (req, res) => {
